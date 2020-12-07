@@ -1,0 +1,22 @@
+
+.add-task-group-row {
+    display: flex;
+}
+.add-task-group-text {
+    text-align: center;
+    margin-left:70px;
+}
+.add-task-group-link {
+  color: #4a4a4a;
+  text-decoration: none;
+}
+
+.column {
+  margin: 0;
+}
+
+.task-form {
+  display: flex;
+  // flex-direction: row;
+  justify-content: flex-start !important;
+}

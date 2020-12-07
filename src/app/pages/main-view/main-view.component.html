@@ -1,0 +1,36 @@
+<div class="root">
+    <div class="navbar has-background-dark">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <h1 class="app-name has-gradient-text">InstaOrganize</h1>
+            </div>
+        </div>
+    </div>
+    <div class="board">
+        <div class="board-bar">
+            <p class="board-name">Default</p>
+        </div>
+        <div class="board-wrapper">
+            <div class="board-columns" cdkDropListGroup>
+                <div class="board-column" *ngFor="let column of board.columns" (onAddClicked)="onColumnAdded($event)">
+                    <div class="column-title">
+                        {{ column.name }}
+                    </div>
+                    <div class="tasks-container"
+                        cdkDropList
+                        [cdkDropListData]="column.tasks"
+                        (cdkDropListDropped)="drop($event)">
+                        <div class="task" *ngFor="let item of column.tasks" cdkDrag>
+                            {{ item }}
+                        </div>
+                        <app-add-task class="add-task"></app-add-task>
+                    </div>
+                    
+                </div>
+                <div class="board-column create-board-column">
+                    <app-add-task-group></app-add-task-group>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
